@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C47D4D00FB2EFA0DF2BE584 /* Pods_DailyHasslesApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */; };
 		5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6B26233E2F0003A87C /* AppDelegate.swift */; };
 		5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6D26233E2F0003A87C /* SceneDelegate.swift */; };
 		5E900F7026233E2F0003A87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6F26233E2F0003A87C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHasslesApp2.release.xcconfig"; path = "Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2.release.xcconfig"; sourceTree = "<group>"; };
 		5E900F6826233E2F0003A87C /* DailyHasslesApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyHasslesApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E900F6B26233E2F0003A87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E900F6D26233E2F0003A87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		5E900F7426233E310003A87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E900F7726233E310003A87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E900F7926233E310003A87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHasslesApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC70EECCD5A89FE9D5D725F0 /* Pods-DailyHasslesApp2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHasslesApp2.debug.xcconfig"; path = "Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C47D4D00FB2EFA0DF2BE584 /* Pods_DailyHasslesApp2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				5E900F6A26233E2F0003A87C /* DailyHasslesApp2 */,
 				5E900F6926233E2F0003A87C /* Products */,
+				92F88290B3CD58B8B36E82BF /* Pods */,
+				8A65907E764FF61AC36870F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DailyHasslesApp2;
 			sourceTree = "<group>";
 		};
+		8A65907E764FF61AC36870F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92F88290B3CD58B8B36E82BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC70EECCD5A89FE9D5D725F0 /* Pods-DailyHasslesApp2.debug.xcconfig */,
+				5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E900F7C26233E310003A87C /* Build configuration list for PBXNativeTarget "DailyHasslesApp2" */;
 			buildPhases = (
+				7D75CF86AC6800C2B2B54252 /* [CP] Check Pods Manifest.lock */,
 				5E900F6426233E2F0003A87C /* Sources */,
 				5E900F6526233E2F0003A87C /* Frameworks */,
 				5E900F6626233E2F0003A87C /* Resources */,
+				6B679608B2E9BCC2DFF3B64A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B679608B2E9BCC2DFF3B64A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D75CF86AC6800C2B2B54252 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyHasslesApp2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E900F6426233E2F0003A87C /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		5E900F7D26233E310003A87C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC70EECCD5A89FE9D5D725F0 /* Pods-DailyHasslesApp2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		5E900F7E26233E310003A87C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
