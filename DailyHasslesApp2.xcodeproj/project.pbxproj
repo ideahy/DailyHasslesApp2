@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C47D4D00FB2EFA0DF2BE584 /* Pods_DailyHasslesApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */; };
+		5E2F0B232623DF1100A15DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */; };
 		5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6B26233E2F0003A87C /* AppDelegate.swift */; };
 		5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6D26233E2F0003A87C /* SceneDelegate.swift */; };
 		5E900F7026233E2F0003A87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6F26233E2F0003A87C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHasslesApp2.release.xcconfig"; path = "Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2.release.xcconfig"; sourceTree = "<group>"; };
+		5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E900F6826233E2F0003A87C /* DailyHasslesApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyHasslesApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E900F6B26233E2F0003A87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E900F6D26233E2F0003A87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				5E900F7426233E310003A87C /* Assets.xcassets */,
 				5E900F7626233E310003A87C /* LaunchScreen.storyboard */,
 				5E900F7926233E310003A87C /* Info.plist */,
+				5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */,
 			);
 			path = DailyHasslesApp2;
 			sourceTree = "<group>";
@@ -88,7 +91,6 @@
 				FC70EECCD5A89FE9D5D725F0 /* Pods-DailyHasslesApp2.debug.xcconfig */,
 				5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,6 +155,7 @@
 			files = (
 				5E900F7826233E310003A87C /* LaunchScreen.storyboard in Resources */,
 				5E900F7526233E310003A87C /* Assets.xcassets in Resources */,
+				5E2F0B232623DF1100A15DA1 /* GoogleService-Info.plist in Resources */,
 				5E900F7326233E2F0003A87C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
