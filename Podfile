@@ -13,4 +13,9 @@ target 'DailyHasslesApp2' do
   pod 'Firebase/Auth'
   pod 'EMAlertController'
 
+  pod 'IQKeyboardManagerSwift'
+  pod 'ViewAnimator'
+  pod 'Firebase/Storage'
+  pod 'SDWebImage'
+
 end
