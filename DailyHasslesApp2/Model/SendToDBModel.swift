@@ -7,7 +7,7 @@
 
 
 //
-//画像データをストレージサーバに飛ばす
+//選択した画像データをストレージサーバに登録する
 //RegisterVCで利用する
 //
 
@@ -26,7 +26,23 @@ class SendToDBModel {
     func sendProfileImageData(data:Data){
         let image = UIImage(data: data)
         let profileImege = image?.jpegData(compressionQuality: 0.1)
-        //参照元を指定(child("フォルダ名"))
-        let imageRef = Storage.storage().reference().child("profileImege")
+        //格納先を作成(.child("フォルダ名").child("画像名"))
+        let imageRef = Storage.storage().reference().child("profileImege").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).jpg")
+        //再度Data型にしたデータを指定したストレージに格納する
+        imageRef.putData(Data(profileImege!), metadata: nil) { (result, error) in
+            if error != nil{
+                print(error.debugDescription)
+                return
+            }
+            //格納先のURLを取得する
+            imageRef.downloadURL { (url, error) in
+                if error != nil{
+                    print(error.debugDescription)
+                    return
+                }
+                //選択した画像をアプリ内に保存する
+                UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
+            }
+        }
     }
 }
