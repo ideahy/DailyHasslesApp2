@@ -50,7 +50,6 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 let data = image.jpegData(compressionQuality: 0.1)
                 //選択した画像データ(Data型)をストレージに保存するためにモデルを呼び出す
                 self.sendToDBModel.sendProfileImageData(data: data!)
-                
                 //
                 //＊ここで画面遷移するとストレージやアプリ内保存が確認できないので、
                 //SendToDBModelにprotocolを作成してそれを回避する
