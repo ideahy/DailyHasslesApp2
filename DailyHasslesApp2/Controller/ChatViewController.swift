@@ -18,7 +18,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     let db = Firestore.firestore()
     var roomName = String()
     //SendToDBModelにてアプリ内に保存した画像URLを格納する変数
-    var imageString = String()
+    var imageURLString = String()
     
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //アプリ内に画像URLが保存されている場合、変数に格納する
         if UserDefaults.standard.object(forKey: "userImage") != nil{
-            imageString = UserDefaults.standard.object(forKey: "userImage") as! String
+            imageURLString = UserDefaults.standard.object(forKey: "userImage") as! String
         }
         
         //全体チャットへ遷移する場合
@@ -52,5 +52,24 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     @IBAction func sendAction(_ sender: Any) {
+        //文字入力がある＆ユーザー認証済みの場合
+        if let message = messageTextField.text, let email = Auth.auth().currentUser?.email{
+            //Firestoreのパスを作成し、取得した各値をDBに登録する
+            //＊全体チャットの場合、roomName = "All"
+            db.collection(roomName).addDocument(data: ["email":email,"message":message,"imageURLString":imageURLString,"date":Date().timeIntervalSince1970]) { (error) in
+                //エラー判定
+                if error != nil{
+                    print(error.debugDescription)
+                    return
+                }
+                
+                //
+                DispatchQueue.main.async {
+                    //送信後はテキストを空にする＆閉じる
+                    self.messageTextField.text = ""
+                    self.messageTextField.resignFirstResponder()
+                }
+            }
+        }
     }    
 }
