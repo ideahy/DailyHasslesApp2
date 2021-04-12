@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>新規登録画面にてユーザーアイコンを登録するために利用</string>
+	<string>アイコンを登録するために利用</string>
 	<key>NSCameraUsageDescription</key>
-	<string>新規登録画面にてユーザーアイコンを登録するために利用</string>
+	<string>アイコンを登録するために利用</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
