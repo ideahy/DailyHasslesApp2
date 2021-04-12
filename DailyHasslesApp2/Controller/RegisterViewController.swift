@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //許可画面を表示するためのModelからメソッドを呼び出す
+        let checkModel = CheckPermission()
+        checkModel.showCheckPermission()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func registerAction(_ sender: Any) {
+        //textFieldの空判定
+        
+        //FirebaseAuthへの認証
+        
+        //入力値を登録
     }
-    */
-
+    
+    
+    @IBAction func tapImageAction(_ sender: Any) {
+        //カメラorアルバム選択肢の表示
+        
+        //アクションシートを表示
+    }
+    
 }

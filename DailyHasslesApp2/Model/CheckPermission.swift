@@ -20,18 +20,18 @@ class CheckPermission {
         PHPhotoLibrary.requestAuthorization { (status) in
             
             switch(status){
-                
+            
             case .authorized:
                 print("許可されてますよ")
-
+                
             case .denied:
-                    print("拒否")
-
+                print("拒否")
+                
             case .notDetermined:
-                        print("notDetermined")
+                print("notDetermined")
                 
             case .restricted:
-                        print("restricted")
+                print("restricted")
                 
             case .limited:
                 print("limited")
@@ -41,5 +41,5 @@ class CheckPermission {
             
         }
     }
-
+    
 }
