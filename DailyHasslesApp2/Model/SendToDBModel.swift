@@ -15,8 +15,18 @@
 import Foundation
 import FirebaseStorage
 
+//resisterVCにて新規登録ボタンが押下された際の保存完了確認用プロトコル
+protocol SendProfileOKDelegate {
+    
+    //urlを引数として受け取るメソッド
+    func sendProfileOKDelegate(url:String)
+    
+}
+
 class SendToDBModel {
     
+    //プロトコルをインスタンス化(プロトコルを参照できる)
+    var sendProfileOK:SendProfileOKDelegate?
     
     init(){
     }
@@ -43,6 +53,13 @@ class SendToDBModel {
                 }
                 //選択した画像をアプリ内に保存する
                 UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
+                //格納先のURLをString型引数としてプロトコルのメソッドを呼び出す
+                self.sendProfileOK?.sendProfileOKDelegate(url: url!.absoluteString)
+                //
+                //＊registerVCにて var urlString を作成
+                //-> 引数のURLをregisterVCにて受け取る用
+                //SendProfileOKDelegateをデリゲートさせる
+                //
             }
             //何も返ってこない②
             
