@@ -22,14 +22,15 @@ class SendToDBModel {
     }
     
     
-    //data引数(Data型)を受け取って定数(UIIMage型)に格納
+    //resisterVCにて新規登録ボタンを押下すると呼び出される(ついでに圧縮済み)
     func sendProfileImageData(data:Data){
-        let image = UIImage(data: data)
-        let profileImege = image?.jpegData(compressionQuality: 0.1)
+        //引数をそのまま定数に格納(->結果的にputDataにて"!"が不必要になった)
+        let profileImegeData = data
+        
         //格納先を作成(.child("フォルダ名").child("画像名"))
         let imageRef = Storage.storage().reference().child("profileImege").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).jpg")
         //再度Data型にしたデータを指定したストレージに格納する
-        imageRef.putData(Data(profileImege!), metadata: nil) { (result, error) in
+        imageRef.putData(profileImegeData, metadata: nil) { (result, error) in
             if error != nil{
                 print(error.debugDescription)
                 return
@@ -43,6 +44,10 @@ class SendToDBModel {
                 //選択した画像をアプリ内に保存する
                 UserDefaults.standard.setValue(url?.absoluteString, forKey: "userImage")
             }
+            //何も返ってこない②
+            
         }
+        //何も返ってこない①
+        
     }
 }

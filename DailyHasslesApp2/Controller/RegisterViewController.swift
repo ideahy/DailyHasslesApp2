@@ -17,6 +17,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var sendToDBModel = SendToDBModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,19 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     @IBAction func registerAction(_ sender: Any) {
         //textFieldの空判定
-        
+        if emailTextField.text?.isEmpty != true && passwordTextField.text?.isEmpty != true, let image = profileImageView.image{
+            //認証用ユーザー情報をFirebaseに登録
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+                if error != nil{
+                    print(error.debugDescription)
+                    return
+                }
+                //UIImage型からData型に変換する(ついでに圧縮)
+                let data = image.jpegData(compressionQuality: 0.1)
+                //選択した画像データ(Data型)をストレージに保存するためにモデルを呼び出す
+                self.sendToDBModel.sendProfileImageData(data: data!)
+            }
+        }
         //FirebaseAuthへの認証
         
         //入力値を登録
@@ -38,9 +52,7 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     
     //画像がタップされたら呼び出される
     @IBAction func tapImageAction(_ sender: Any) {
-        //カメラorアルバム選択肢の表示
-        
-        //選択用アラートの表示
+        //カメラorアルバム選択アラートの表示
         showAlert()
     }
     
