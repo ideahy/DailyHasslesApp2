@@ -9,8 +9,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RegisterViewController: UIViewController {
 
+//＊カメラやアルバム立ち上げの際にはImagePickerやNavigationが必要
+class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -34,10 +36,92 @@ class RegisterViewController: UIViewController {
     }
     
     
+    //画像がタップされたら呼び出される
     @IBAction func tapImageAction(_ sender: Any) {
         //カメラorアルバム選択肢の表示
         
-        //アクションシートを表示
+        //選択用アラートの表示
+        showAlert()
     }
     
+    
+    //カメラ立ち上げメソッド
+    func doCamera(){
+        //カメラを指定
+        let sourceType:UIImagePickerController.SourceType = .camera
+        
+        //カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            
+            //表示の設定
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.allowsEditing = true
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    //アルバム立ち上げメソッド
+    func doAlbum(){
+        
+        let sourceType:UIImagePickerController.SourceType = .photoLibrary
+        
+        //アルバムが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            
+            //表示の設定
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.allowsEditing = true
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    //画像が選択された後に呼び出されるメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //画像が選択された場合
+        if info[.originalImage] as? UIImage != nil{
+            //選択画像を変数に格納
+            let selectedImage = info[.originalImage] as! UIImage
+            //画面上に選択画像を表示
+            profileImageView.image = selectedImage
+            //picker画面を閉じる
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    
+    //キャンセルメソッド
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //picker画面を閉じる
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //アラート
+    func showAlert(){
+
+        //アラートの設定
+        let alertController = UIAlertController(title: "選択", message: "どちらを使用しますか?", preferredStyle: .actionSheet)
+
+        let action1 = UIAlertAction(title: "カメラ", style: .default) { (alert) in
+            self.doCamera()
+        }
+
+        let action2 = UIAlertAction(title: "アルバム", style: .default) { (alert) in
+            self.doAlbum()
+        }
+        
+        let action3 = UIAlertAction(title: "キャンセル", style: .cancel)
+        
+        //アラート画面に選択肢を追加
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
