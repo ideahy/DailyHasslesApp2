@@ -17,6 +17,7 @@
 		5E900F7326233E2F0003A87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E900F7126233E2F0003A87C /* Main.storyboard */; };
 		5E900F7526233E310003A87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E900F7426233E310003A87C /* Assets.xcassets */; };
 		5E900F7826233E310003A87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E900F7626233E310003A87C /* LaunchScreen.storyboard */; };
+		5EC1C71F2624033C00206BDC /* SendToDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1C71E2624033C00206BDC /* SendToDBModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5E900F7426233E310003A87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E900F7726233E310003A87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E900F7926233E310003A87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EC1C71E2624033C00206BDC /* SendToDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToDBModel.swift; sourceTree = "<group>"; };
 		F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyHasslesApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC70EECCD5A89FE9D5D725F0 /* Pods-DailyHasslesApp2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHasslesApp2.debug.xcconfig"; path = "Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */,
+				5EC1C71E2624033C00206BDC /* SendToDBModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				5E900F7026233E2F0003A87C /* ViewController.swift in Sources */,
 				5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */,
 				5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */,
+				5EC1C71F2624033C00206BDC /* SendToDBModel.swift in Sources */,
 				5E2F0B2B2623E22900A15DA1 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
