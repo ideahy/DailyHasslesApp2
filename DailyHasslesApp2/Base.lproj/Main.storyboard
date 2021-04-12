@@ -79,6 +79,7 @@
                         <outlet property="emailTextField" destination="cbF-l0-Yzr" id="pf7-oP-VjJ"/>
                         <outlet property="passwordTextField" destination="WxR-BV-UNg" id="DmG-Cr-9wI"/>
                         <outlet property="profileImageView" destination="VON-OY-Jth" id="CG4-z6-vey"/>
+                        <segue destination="k7S-XO-pBw" kind="show" id="lMP-yc-Ma6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwc-Kh-Kxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -125,7 +126,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="IiF-jD-NU7">
             <objects>
-                <tabBarController id="k7S-XO-pBw" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k7S-XO-pBw" customClass="TabBarController" customModule="DailyHasslesApp2" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="o33-5c-OVR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1qO-BR-oZQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

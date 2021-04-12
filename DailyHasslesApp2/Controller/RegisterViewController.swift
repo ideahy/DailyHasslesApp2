@@ -11,13 +11,16 @@ import FirebaseAuth
 
 
 //＊カメラやアルバム立ち上げの際にはImagePickerやNavigationが必要
-class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate {
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    //SendToDBModelクラスをインスタンス化
     var sendToDBModel = SendToDBModel()
+    var urlString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,11 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         //許可画面を表示するためのModelからメソッドを呼び出す
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
+        //SendProfileOKDelegateメソッドをこのクラスで使えるようにする
+        
+        //SendToDBModelクラス内の変数や関数を参照可能
+        //-> 変数を使用可能
+        sendToDBModel.sendProfileOK = self
     }
     
     
@@ -42,6 +50,11 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
                 let data = image.jpegData(compressionQuality: 0.1)
                 //選択した画像データ(Data型)をストレージに保存するためにモデルを呼び出す
                 self.sendToDBModel.sendProfileImageData(data: data!)
+                
+                //
+                //＊ここで画面遷移するとストレージやアプリ内保存が確認できないので、
+                //SendToDBModelにprotocolを作成してそれを回避する
+                //
             }
         }
         //FirebaseAuthへの認証
@@ -54,6 +67,20 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func tapImageAction(_ sender: Any) {
         //カメラorアルバム選択アラートの表示
         showAlert()
+    }
+    
+    
+    func sendProfileOKDelegate(url: String) {
+        //SendToDBModelにて格納した引数を受け取る
+        urlString = url
+        if urlString.isEmpty != true {
+            //
+            //＊状況に合わせて変更する
+            //self.performSegue(withIdentifier: "tabBC", sender: nil)
+            //
+            let tabBC = self.storyboard?.instantiateViewController(identifier: "tabBC") as! TabBarController
+            self.navigationController?.pushViewController(tabBC, animated: true)
+        }
     }
     
     
