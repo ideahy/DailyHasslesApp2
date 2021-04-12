@@ -19,6 +19,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var roomName = String()
     //SendToDBModelにてアプリ内に保存した画像URLを格納する変数
     var imageURLString = String()
+    //Message構造体が入る配列を空にして宣言する
+    var messages:[Message] = []
     
     
     override func viewDidLoad() {
@@ -38,6 +40,36 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //ナビバーに表示するタイトルを指定する
         self.navigationItem.title = roomName
+    }
+    
+    
+    //部屋ごとに格納されているデータを全て取得する
+    func loadMessages(roomName:String){
+        db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
+            //初期化
+            self.messages = []
+            //エラー判定
+            if error != nil{
+                print(error.debugDescription)
+                return
+            }
+
+            //snapShotの空判定(部屋ごとの各データを取得できた場合)
+            if let snapShotDoc = snapShot?.documents{
+                for doc in snapShotDoc{
+                    //docの数だけ繰り返してドキュメント内のデータを取得する
+                    let data = doc.data()
+                    
+                    //データの空判定(ドキュメント内のデータが取得できた場合)
+                    if let email = data["email"] as? String, let message = data["message"] as? String, let imageURLString = data["imageURLString"] as? String{
+                        //
+                        let newMessage = Message(email: email, message: message, imageURLString: imageURLString)
+                        //
+                        self.messages.append(newMessage)
+                    }
+                }
+            }
+        }
     }
     
     
@@ -63,7 +95,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     return
                 }
                 
-                //
+                //非同期処理
+                //＊上記のDB登録通信が遅い場合には順番を問わず処理が実行される
                 DispatchQueue.main.async {
                     //送信後はテキストを空にする＆閉じる
                     self.messageTextField.text = ""
