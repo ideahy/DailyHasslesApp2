@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C47D4D00FB2EFA0DF2BE584 /* Pods_DailyHasslesApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F766EB1D0BA73FD54E2D5933 /* Pods_DailyHasslesApp2.framework */; };
 		5E2F0B232623DF1100A15DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */; };
+		5E2F0B2B2623E22900A15DA1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */; };
+		5E2F0B2F2623E26700A15DA1 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */; };
 		5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6B26233E2F0003A87C /* AppDelegate.swift */; };
 		5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6D26233E2F0003A87C /* SceneDelegate.swift */; };
 		5E900F7026233E2F0003A87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6F26233E2F0003A87C /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		5BC8D2BE25E52D15FB4CA94D /* Pods-DailyHasslesApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyHasslesApp2.release.xcconfig"; path = "Target Support Files/Pods-DailyHasslesApp2/Pods-DailyHasslesApp2.release.xcconfig"; sourceTree = "<group>"; };
 		5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
 		5E900F6826233E2F0003A87C /* DailyHasslesApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyHasslesApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E900F6B26233E2F0003A87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E900F6D26233E2F0003A87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E2F0B282623E20A00A15DA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E900F6F26233E2F0003A87C /* ViewController.swift */,
+				5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E2F0B2D2623E24200A15DA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5E900F5F26233E2F0003A87C = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +88,8 @@
 			children = (
 				5E900F6B26233E2F0003A87C /* AppDelegate.swift */,
 				5E900F6D26233E2F0003A87C /* SceneDelegate.swift */,
-				5E900F6F26233E2F0003A87C /* ViewController.swift */,
+				5E2F0B2D2623E24200A15DA1 /* Model */,
+				5E2F0B282623E20A00A15DA1 /* Controller */,
 				5E900F7126233E2F0003A87C /* Main.storyboard */,
 				5E900F7426233E310003A87C /* Assets.xcassets */,
 				5E900F7626233E310003A87C /* LaunchScreen.storyboard */,
@@ -209,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2F0B2F2623E26700A15DA1 /* CheckPermission.swift in Sources */,
 				5E900F7026233E2F0003A87C /* ViewController.swift in Sources */,
 				5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */,
 				5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */,
+				5E2F0B2B2623E22900A15DA1 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
