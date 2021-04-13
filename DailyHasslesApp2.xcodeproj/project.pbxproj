@@ -13,6 +13,8 @@
 		5E2F0B232623DF1100A15DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */; };
 		5E2F0B2B2623E22900A15DA1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */; };
 		5E2F0B2F2623E26700A15DA1 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */; };
+		5E5B70422625346B003B1D02 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B70412625346B003B1D02 /* RoomViewController.swift */; };
+		5E5B704526253954003B1D02 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B704426253954003B1D02 /* RoomModel.swift */; };
 		5E6F891A26252396004B449C /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F891826252396004B449C /* MessageCell.swift */; };
 		5E6F891B26252396004B449C /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F891926252396004B449C /* MessageCell.xib */; };
 		5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E900F6B26233E2F0003A87C /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 		5E2F0B222623DF1100A15DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
+		5E5B70412625346B003B1D02 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		5E5B704426253954003B1D02 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		5E6F891826252396004B449C /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5E6F891926252396004B449C /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		5E900F6826233E2F0003A87C /* DailyHasslesApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyHasslesApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,7 @@
 				5E2F0B2A2623E22900A15DA1 /* RegisterViewController.swift */,
 				5EED0A0D26241CF600A2398C /* TabBarController.swift */,
 				5E161E412624823F00B5BE7F /* ChatViewController.swift */,
+				5E5B70412625346B003B1D02 /* RoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 				5E2F0B2E2623E26700A15DA1 /* CheckPermission.swift */,
 				5EC1C71E2624033C00206BDC /* SendToDBModel.swift */,
 				5E0004072624976F001654C2 /* MessageModel.swift */,
+				5E5B704426253954003B1D02 /* RoomModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,7 +270,9 @@
 				5E161E422624823F00B5BE7F /* ChatViewController.swift in Sources */,
 				5E900F6C26233E2F0003A87C /* AppDelegate.swift in Sources */,
 				5E900F6E26233E2F0003A87C /* SceneDelegate.swift in Sources */,
+				5E5B70422625346B003B1D02 /* RoomViewController.swift in Sources */,
 				5EED0A0E26241CF600A2398C /* TabBarController.swift in Sources */,
+				5E5B704526253954003B1D02 /* RoomModel.swift in Sources */,
 				5EC1C71F2624033C00206BDC /* SendToDBModel.swift in Sources */,
 				5E0004082624976F001654C2 /* MessageModel.swift in Sources */,
 				5E2F0B2B2623E22900A15DA1 /* RegisterViewController.swift in Sources */,
