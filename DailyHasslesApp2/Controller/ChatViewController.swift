@@ -53,7 +53,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 print(error.debugDescription)
                 return
             }
-
+            
             //snapShotの空判定(部屋ごとの各データを取得できた場合)
             if let snapShotDoc = snapShot?.documents{
                 for doc in snapShotDoc{
@@ -66,6 +66,15 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         let newMessage = Message(email: email, message: message, imageURLString: imageURLString)
                         //
                         self.messages.append(newMessage)
+                        //
+                        DispatchQueue.main.async {
+                            //TableViewをリロードしてメッセージを表示
+                            self.chatTableView.reloadData()
+                            //indexPathを配列の個数-1にする
+                            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                            //メッセージの一番下の行に来るようにスクロール
+                            self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                        }
                     }
                 }
             }
@@ -74,7 +83,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return messages.count
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     
