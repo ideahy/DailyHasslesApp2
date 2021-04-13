@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        
+        //初期状態でログアウト
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        //キーボードの上下に合わせて入力欄も移動する機能
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+
         // Override point for customization after application launch.
         return true
     }
