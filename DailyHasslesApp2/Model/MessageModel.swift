@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Message{
+struct MessageModel{
     
     let email:String
     let message:String

@@ -19,8 +19,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var roomName = String()
     //SendToDBModelにてアプリ内に保存した画像URLを格納する変数
     var imageURLString = String()
-    //Message構造体が入る配列を空にして宣言する
-    var messages:[Message] = []
+    //MessageModel構造体が入る配列を空にして宣言する
+    var messages:[MessageModel] = []
     
     
     override func viewDidLoad() {
@@ -68,8 +68,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     //データの空判定(ドキュメント内のデータが取得できた場合)
                     if let email = data["email"] as? String, let message = data["message"] as? String, let imageURLString = data["imageURLString"] as? String{
                         //DBに格納されている値を変数に格納する
-                        let newMessage = Message(email: email, message: message, imageURLString: imageURLString)
-                        //Message構造体が入る配列にロードした値を格納(クラス内で宣言済)
+                        let newMessage = MessageModel(email: email, message: message, imageURLString: imageURLString)
+                        //MessageModel構造体が入る配列にロードした値を格納(クラス内で宣言済)
                         self.messages.append(newMessage)
                         //非同期処理
                         DispatchQueue.main.async {
