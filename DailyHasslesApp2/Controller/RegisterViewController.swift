@@ -11,7 +11,7 @@ import FirebaseAuth
 
 
 //＊カメラやアルバム立ち上げの際にはImagePickerやNavigationが必要
-class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate {
+class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegate,UITextFieldDelegate {
     
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,13 +28,20 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         //許可画面を表示するためのModelからメソッドを呼び出す
         let checkModel = CheckPermission()
         checkModel.showCheckPermission()
-        //SendProfileOKDelegateメソッドをこのクラスで使えるようにする
-        
+        //SendProfileOKDelegateメソッドをこのクラスで使う
         //SendToDBModelクラス内の変数や関数を参照可能
         //-> 変数を使用可能
         sendToDBModel.sendProfileOK = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
+    
+    //キーボード外がタッチされた場合は閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
     
     
     @IBAction func registerAction(_ sender: Any) {
