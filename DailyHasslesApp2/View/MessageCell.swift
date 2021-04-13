@@ -9,9 +9,19 @@ import UIKit
 
 class MessageCell: UITableViewCell {
 
+    
+    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        //角を丸にする
+        rightImageView.layer.cornerRadius = 25
+        leftImageView.layer.cornerRadius = 25
+        backView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
