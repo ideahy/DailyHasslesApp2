@@ -27,6 +27,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        //カスタムセルを登録する
+        chatTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         //アプリ内に画像URLが保存されている場合、変数に格納する
         if UserDefaults.standard.object(forKey: "userImage") != nil{
@@ -40,10 +42,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //ナビバーに表示するタイトルを指定する
         self.navigationItem.title = roomName
+        //部屋内のメッセージをロードする
+        loadMessages(roomName: roomName)
     }
     
     
     //部屋ごとに格納されているデータを全て取得する
+    //＊ロード用のメソッドであり、送信用ではない
     func loadMessages(roomName:String){
         db.collection(roomName).order(by: "date").addSnapshotListener { (snapShot, error) in
             //初期化
@@ -62,11 +67,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     
                     //データの空判定(ドキュメント内のデータが取得できた場合)
                     if let email = data["email"] as? String, let message = data["message"] as? String, let imageURLString = data["imageURLString"] as? String{
-                        //
+                        //DBに格納されている値を変数に格納する
                         let newMessage = Message(email: email, message: message, imageURLString: imageURLString)
-                        //
+                        //Message構造体が入る配列にロードした値を格納(クラス内で宣言済)
                         self.messages.append(newMessage)
-                        //
+                        //非同期処理
                         DispatchQueue.main.async {
                             //TableViewをリロードしてメッセージを表示
                             self.chatTableView.reloadData()
@@ -92,8 +97,43 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    //TableView画面に表示する内容を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        //MessageCellのプロパティにアクセス可能
+        //
+        //＊エラー判断ポイント
+        //tableView(引数) or chatTableView(変数)
+        //
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MessageCell
+        //ロードしたメッセージ内容をcellのラベルに反映する
+        let contents = messages[indexPath.row]
+        cell.messageLabel.text = contents.message
+        
+        //自分の送信したメッセージの場合
+        if contents.email == Auth.auth().currentUser?.email {
+            //他人画像を隠す＆自分画像を表示する
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.rightImageView.sd_setImage(with: URL(string: imageURLString), completed: nil)
+            //背景色＆文字色
+            cell.backView.backgroundColor = .systemTeal
+            cell.textLabel?.textColor = .white
+            //他人画像は表示されない
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageURLString), completed: nil)
+            
+            //自分以外のユーザーのメッセージの場合
+        }else{
+            //他人画像を表示する＆自分画像を隠す
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.leftImageView.sd_setImage(with: URL(string: messages[indexPath.row].imageURLString), completed: nil)
+            //背景色＆文字色
+            cell.backView.backgroundColor = .orange
+            cell.textLabel?.textColor = .white
+            //自分画像は表示されない
+            cell.rightImageView.sd_setImage(with: URL(string: imageURLString), completed: nil)
+        }
+        return cell
     }
     
     
