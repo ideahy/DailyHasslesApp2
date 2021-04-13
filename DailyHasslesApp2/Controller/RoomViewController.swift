@@ -49,6 +49,33 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        //
+        //＊エラー判断ポイント
+        //tableView(引数) or roomTableView(変数)
+        //
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
+        cell.imageView?.image = UIImage(named: roomImageStringArray[indexPath.row])
+        cell.textLabel?.text = roomNameArray[indexPath.row]
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    
+    //セルが選択された時に呼び出し
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //画面遷移(sender(番号) -> prepare)
+        performSegue(withIdentifier: "roomChat", sender: indexPath.row)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //使い回し(クラスを参照している)
+        let roomChatVC = segue.destination as! ChatViewController
+        //roomNameArrayの（sender）番目をroomChatVCのルームネームにする
+        roomChatVC.roomName = roomNameArray[sender as! Int]
     }
 }

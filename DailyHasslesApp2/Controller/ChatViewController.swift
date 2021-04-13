@@ -35,7 +35,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             imageURLString = UserDefaults.standard.object(forKey: "userImage") as! String
         }
         
-        //全体チャットへ遷移する場合
+        //全体チャットへ遷移する場合は"All"
         if roomName == "" {
             roomName = "All"
         }
