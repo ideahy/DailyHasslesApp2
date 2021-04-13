@@ -72,6 +72,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backView" destination="Gvt-m0-dPa" id="70Q-UV-kG6"/>
+                <outlet property="leftImageView" destination="dxZ-R9-f6i" id="WYo-SO-cOx"/>
+                <outlet property="messageLabel" destination="OCF-0r-tDy" id="kuq-Gm-vqL"/>
+                <outlet property="rightImageView" destination="bgD-e4-UCc" id="tyc-rq-R3c"/>
+            </connections>
             <point key="canvasLocation" x="161.59420289855075" y="84.375"/>
         </tableViewCell>
     </objects>
