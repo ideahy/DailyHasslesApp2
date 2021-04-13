@@ -20,9 +20,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSU-di-JHb">
-                                <rect key="frame" x="129" y="225" width="62" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="始めよう">
+                                <rect key="frame" x="67.5" y="218" width="185" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="さあ、始めよう">
                                     <color key="titleColor" red="0.99559646840000005" green="0.1734896004" blue="0.3333099484" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -55,66 +55,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="AW1-U7-71X">
-                                <rect key="frame" x="67" y="68.5" width="185" height="324"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VON-OY-Jth">
-                                        <rect key="frame" x="0.0" y="1.5" width="185" height="144"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="VON-OY-Jth" secondAttribute="height" multiplier="80:81" id="ibj-5k-DPs"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="1LA-s0-UU6" appends="YES" id="TBM-lO-mtb"/>
-                                        </connections>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbF-l0-Yzr">
-                                        <rect key="frame" x="0.0" y="170" width="185" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="roE-ez-rcM"/>
-                                            <constraint firstAttribute="height" constant="34" id="vku-C1-4Qn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxR-BV-UNg">
-                                        <rect key="frame" x="0.0" y="227" width="185" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="8JP-ra-fpB"/>
-                                            <constraint firstAttribute="width" constant="240" id="zr9-Uv-cY6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m65-0V-gpt">
-                                        <rect key="frame" x="0.0" y="284" width="185" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="UUW-Sh-xIa"/>
-                                            <constraint firstAttribute="width" constant="240" id="i0Z-Jb-Cw8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="新規登録">
-                                            <color key="titleColor" red="0.99559646840000005" green="0.1734896004" blue="0.3333099484" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registerAction:" destination="kPg-59-6BQ" eventType="touchUpInside" id="PdD-0n-VUA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxR-BV-UNg">
+                                <rect key="frame" x="40" y="277" width="240" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="AW1-U7-71X" secondAttribute="height" multiplier="4:7" id="6KI-PI-dgZ"/>
+                                    <constraint firstAttribute="width" constant="240" id="F51-G4-zQo"/>
+                                    <constraint firstAttribute="height" constant="34" id="Wb1-SA-gRu"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m65-0V-gpt">
+                                <rect key="frame" x="40" y="351" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6QD-Jx-pbl"/>
+                                    <constraint firstAttribute="height" constant="40" id="UUW-Sh-xIa"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="e7Y-lP-dvt"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="fuK-c3-jHt"/>
+                                    <constraint firstAttribute="width" constant="240" id="i0Z-Jb-Cw8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="qhc-hp-oRC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="新規登録">
+                                    <color key="titleColor" red="0.99559646840000005" green="0.1734896004" blue="0.3333099484" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerAction:" destination="kPg-59-6BQ" eventType="touchUpInside" id="PdD-0n-VUA"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VON-OY-Jth">
+                                <rect key="frame" x="100.5" y="85.5" width="119" height="116"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VON-OY-Jth" secondAttribute="height" multiplier="1:1" id="179-Ad-9Zc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1LA-s0-UU6" appends="YES" id="TBM-lO-mtb"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbF-l0-Yzr">
+                                <rect key="frame" x="40" y="223" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="blt-jB-hYK"/>
+                                    <constraint firstAttribute="height" constant="34" id="oze-K3-Gb0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2er-We-wM8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AW1-U7-71X" firstAttribute="leading" secondItem="2er-We-wM8" secondAttribute="leading" constant="67" id="WAT-pK-YRq"/>
-                            <constraint firstItem="2er-We-wM8" firstAttribute="trailing" secondItem="AW1-U7-71X" secondAttribute="trailing" constant="68" id="drM-Qh-Rcj"/>
-                            <constraint firstItem="AW1-U7-71X" firstAttribute="top" secondItem="2er-We-wM8" secondAttribute="top" constant="24.5" id="qAw-b4-IoI"/>
+                            <constraint firstItem="cbF-l0-Yzr" firstAttribute="centerX" secondItem="Uzv-oZ-HYA" secondAttribute="centerX" id="Crr-Pu-ZwX"/>
+                            <constraint firstItem="m65-0V-gpt" firstAttribute="top" secondItem="WxR-BV-UNg" secondAttribute="bottom" constant="40" id="EF3-ZT-vPL"/>
+                            <constraint firstItem="cbF-l0-Yzr" firstAttribute="centerX" secondItem="Uzv-oZ-HYA" secondAttribute="centerX" id="Fe4-xC-zNy"/>
+                            <constraint firstItem="m65-0V-gpt" firstAttribute="centerX" secondItem="Uzv-oZ-HYA" secondAttribute="centerX" id="Hwp-h6-su9"/>
+                            <constraint firstItem="WxR-BV-UNg" firstAttribute="top" secondItem="cbF-l0-Yzr" secondAttribute="bottom" constant="20" id="KU1-Ag-XTH"/>
+                            <constraint firstItem="cbF-l0-Yzr" firstAttribute="top" secondItem="VON-OY-Jth" secondAttribute="bottom" constant="20" id="U8i-vt-Jib"/>
+                            <constraint firstItem="2er-We-wM8" firstAttribute="trailing" secondItem="m65-0V-gpt" secondAttribute="trailing" constant="40" id="f0F-Kf-OE7"/>
+                            <constraint firstItem="VON-OY-Jth" firstAttribute="centerX" secondItem="Uzv-oZ-HYA" secondAttribute="centerX" id="lTX-Ib-uq2"/>
+                            <constraint firstItem="WxR-BV-UNg" firstAttribute="centerX" secondItem="Uzv-oZ-HYA" secondAttribute="centerX" id="mgM-x8-6yv"/>
+                            <constraint firstItem="VON-OY-Jth" firstAttribute="top" secondItem="2er-We-wM8" secondAttribute="top" constant="40" id="stI-pe-N3v"/>
+                            <constraint firstItem="cbF-l0-Yzr" firstAttribute="centerY" secondItem="Uzv-oZ-HYA" secondAttribute="centerY" id="tOr-8O-Pdb"/>
+                            <constraint firstItem="m65-0V-gpt" firstAttribute="leading" secondItem="2er-We-wM8" secondAttribute="leading" constant="40" id="v5m-0i-OUg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CQF-bh-5Kg"/>
                     <connections>
                         <outlet property="emailTextField" destination="cbF-l0-Yzr" id="pf7-oP-VjJ"/>
                         <outlet property="passwordTextField" destination="WxR-BV-UNg" id="DmG-Cr-9wI"/>
@@ -129,7 +133,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1477.5999999999999" y="88.605697151424295"/>
+            <point key="canvasLocation" x="1477.5" y="87.5"/>
         </scene>
         <!--ルーム-->
         <scene sceneID="F6B-Ax-wF5">
