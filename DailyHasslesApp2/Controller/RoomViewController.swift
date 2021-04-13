@@ -54,8 +54,12 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //tableView(引数) or roomTableView(変数)
         //
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
-        cell.imageView?.image = UIImage(named: roomImageStringArray[indexPath.row])
-        cell.textLabel?.text = roomNameArray[indexPath.row]
+        //表示ルーム画像
+        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        imageView.image = UIImage(named: roomImageStringArray[indexPath.row])
+        //表示ルーム名
+        let label = cell.contentView.viewWithTag(2) as! UILabel
+        label.text = roomNameArray[indexPath.row]
         return cell
     }
     
