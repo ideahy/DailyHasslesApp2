@@ -37,6 +37,13 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //ナビゲーションバーは必要ないので隠しておく
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    
     //キーボード外がタッチされた場合は閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailTextField.resignFirstResponder()
