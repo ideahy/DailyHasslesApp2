@@ -23,8 +23,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxZ-R9-f6i">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Im2-4J-LzQ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="LpX-vD-YQk"/>
                                     <constraint firstAttribute="height" constant="50" id="bL8-vj-Jo8"/>
                                     <constraint firstAttribute="width" constant="50" id="gdh-Ah-V67"/>
                                 </constraints>
@@ -35,7 +33,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCF-0r-tDy">
                                         <rect key="frame" x="8" y="9" width="198" height="62"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="198" id="yG2-w0-agg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Rq7-TO-Puv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +43,7 @@
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OCF-0r-tDy" secondAttribute="bottom" constant="9" id="Sgv-As-64y"/>
-                                    <constraint firstAttribute="width" constant="214" id="VRO-fP-R9Q"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="VRO-fP-R9Q"/>
                                     <constraint firstItem="OCF-0r-tDy" firstAttribute="leading" secondItem="Gvt-m0-dPa" secondAttribute="leading" constant="8" id="ls1-L4-1q1"/>
                                     <constraint firstItem="OCF-0r-tDy" firstAttribute="top" secondItem="Gvt-m0-dPa" secondAttribute="top" constant="9" id="yvw-iO-7Jq"/>
                                     <constraint firstAttribute="trailing" secondItem="OCF-0r-tDy" secondAttribute="trailing" constant="8" id="z19-xq-MoQ"/>
@@ -59,6 +57,12 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="dxZ-R9-f6i" firstAttribute="top" secondItem="ebu-k0-n0B" secondAttribute="top" id="24T-nS-I4A"/>
+                            <constraint firstAttribute="trailing" secondItem="bgD-e4-UCc" secondAttribute="trailing" id="FLv-On-Q2B"/>
+                            <constraint firstItem="dxZ-R9-f6i" firstAttribute="leading" secondItem="ebu-k0-n0B" secondAttribute="leading" id="HYd-Ms-GXi"/>
+                            <constraint firstItem="bgD-e4-UCc" firstAttribute="top" secondItem="ebu-k0-n0B" secondAttribute="top" id="kvd-nw-Ep0"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
